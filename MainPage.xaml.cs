@@ -49,6 +49,6 @@ public partial class MainPage : ContentPage
 
 	void DefineTip(int tip)
 	{
-		tipPercentSlider.Value = tip; 
+		tipPercentSlider.Value = tip;
 	}
 }
