@@ -3,31 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TipCalculator.MainPage">
 
-    <VerticalStackLayout Padding="40" Spacing="10" >
-        <HorizontalStackLayout Spacing="10">
-            <Label Text="Total da conta" WidthRequest="100" VerticalOptions="Center"/>
-            <Entry x:Name="billInput" Placeholder="Insira o valor da conta" Keyboard="Numeric"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Margin="0, 20, 0, 0" Spacing="10">
-            <Label Text="Gorjeta" WidthRequest="100"/>
-            <Label x:Name="tipOutput" Text="0.00"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Spacing="10">
-            <Label Text="Total" WidthRequest="100"/>
-            <Label x:Name="totalOutput" Text="0.00"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout VerticalOptions="End" Spacing="10">
-            <Label Text="Porcentagem de gorjeta" WidthRequest="100"/>
-            <Label x:Name="tipPercent" Text="15%"/>
-        </HorizontalStackLayout>
-        <Slider x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15"/>
-        <HorizontalStackLayout Margin="0, 20, 0, 0" Spacing="10">
-            <Button Text="15%" x:Name="OnNormalTip" WidthRequest="150" HorizontalOptions="Center"/>
-            <Button Text="20%" x:Name="OnGenerousTip" WidthRequest="150" HorizontalOptions="Center"/>
-        </HorizontalStackLayout>
-        <HorizontalStackLayout Margin="0, 20, 0, 0" Spacing="10">
-            <Button x:Name="roundDown" Text="Arredondar para baixo" WidthRequest="150" HorizontalOptions="Center"/>
-            <Button x:Name="roundUp" Text="Arredondar para cima" WidthRequest="150" HorizontalOptions="Center"/>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+    <Grid RowSpacing="10" ColumnSpacing="20" Margin="40,10,40,10" >
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label HorizontalOptions="Start" VerticalOptions="Center" Text="Total da conta"/>
+        <Entry HorizontalOptions="End" VerticalOptions="Center" x:Name="billInput" Placeholder="Insira o valor da conta" Keyboard="Numeric"/>
+
+        <Label Grid.Row="1" HorizontalOptions="Start" VerticalOptions="Center" Text="Gorjeta" />
+        <Label Grid.Row="1" HorizontalOptions="End" VerticalOptions="Center" x:Name="tipOutput" Text="0.00" />
+
+        <Label Grid.Row="2" HorizontalOptions="Start" VerticalOptions="Center" Text="Total" />
+        <Label Grid.Row="2" HorizontalOptions="End" VerticalOptions="Center" x:Name="totalOutput" Text="0.00" />
+
+        <Label Grid.Row="3" HorizontalOptions="Start" VerticalOptions="Center" Text="Porcentagem de gorjeta" />
+        <Label Grid.Row="3" HorizontalOptions="End" VerticalOptions="Center" x:Name="tipPercent" Text="15%" />
+
+        <Slider Grid.Row="4" Grid.ColumnSpan="2" VerticalOptions="Center" x:Name="tipPercentSlider" Minimum="0" Maximum="100" Value="15" />
+
+        <Button Grid.Row="5" Grid.Column="0" VerticalOptions="Fill" Text="15%" x:Name="OnNormalTip" />
+        <Button Grid.Row="5" Grid.Column="1" VerticalOptions="Fill" Text="20%" x:Name="OnGenerousTip" />
+        <Button Grid.Row="6" Grid.Column="0" VerticalOptions="Fill" x:Name="roundDown" Text="Arredondar para baixo" />
+        <Button Grid.Row="6" Grid.Column="1" VerticalOptions="Fill" x:Name="roundUp" Text="Arredondar para cima" />
+    </Grid>
 </ContentPage>
